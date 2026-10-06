@@ -22,7 +22,7 @@
 <div id="app"></div><div id="modalRoot"></div><div id="toastRoot"></div>
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-const API='https://script.google.com/macros/s/AKfycbwWwz1weCJ938Gq_dZ3Og6yDhPzMWFcOaRUIUbujEkXS0O7_HHRCJmpsqV-GMbCZPvU/exec';
+const API='https://script.google.com/macros/s/AKfycbw3c1EGR_t6vg49Gui3AKxGWvBNspN_WlTc-yzqvdk0LUKYSGIBuLOsoc-JIngvJ4ko/exec';
 const state={token:localStorage.getItem('si_token')||'',user:JSON.parse(localStorage.getItem('si_user')||'null'),view:'dashboard',section:'saved',templates:[],dashboard:null,pdf:null,fields:[],pages:[],selected:null,tool:null,editorTemplateId:null,recipients:[],signingMode:'sequential',signToken:new URLSearchParams(location.search).get('token'),completedMode:new URLSearchParams(location.search).get('completed')==='1',signingBusy:false};
 const $=s=>document.querySelector(s); const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 function toast(m){const e=document.createElement('div');e.className='toast';e.textContent=m;$('#toastRoot').append(e);setTimeout(()=>e.remove(),2600)}
